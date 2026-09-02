@@ -1,6 +1,6 @@
-# cooking-time-predictor
+# Cooking Time Predictor
 
 YumYumYumInMyTumTumTum (work in progress)
 
 DSC 80 Final Project done by Rishika Sahu and Natalie Wu
-Using Food.com data 
+using Food.com data 
