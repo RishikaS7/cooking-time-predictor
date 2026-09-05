@@ -4,12 +4,10 @@ YumYumYumInMyTumTumTum
 By: Rishika Sahu and Natalie Wu
 
 **Introduction**  
-
 For our DSC 80 Final Project, we chose to work with the provided dataset from Food.com. With a busy lifestyle, it is critical that the recipes we choose to make are not only tasty but simple and quick to make as well. With that being said, we chose to focus our project on predicting the time it takes to make a recipe using features such as the number of steps, number of ingredients, and nutrition facts. In the merged dataset, there is a total of 234,429 rows and 17 columns. Out of the 17 columns, the ones most useful to us are `minutes`, `n_steps`, and `ingredients` since they overall will be able to give us a good idea of the timing, steps, and the ingredients required.  
 
 
 **Data Cleaning and Exploratory Data Analysis**   
-
 For the data cleaning process, we started out by merging the interactions.csv with the RAW_recipes.csv on the `recipe_id`/`id` columns in the corresponding datasets since those columns represented the identification of each recipe. An additional thing to note on the merging process is that we used a left merge to ensure that all of the listed recipes are being used in our project even if they have no ratings, reviews, or interactions in general.  
 After merging the datasets together, we needed to fill any null values in `rating` with a 0 (per the given project instructions). We then calculated the average rating for each recipe by grouping the DataFrame by `id` and calculating the mean for the 'rating' column before merging it into our main dataset as a column called `avg_rating`.  
 
@@ -21,7 +19,7 @@ After merging the datasets together, we needed to fill any null values in `ratin
 | 306168 | 412 broccoli casserole               |        40 |         6 |               9 |            5 |
 | 306168 | 412 broccoli casserole               |        40 |         6 |               9 |            5 |
   
-
+  
 <iframe
   src="assets/distribution_of_steps.html"
   width="800"
@@ -46,7 +44,11 @@ After merging the datasets together, we needed to fill any null values in `ratin
 | 31-40          | 339.691 | 251.076  | 130.076  | 190.704  |  277.705 |
 | 41+            | 238.114 | 350.005  | 168.005  | 325.993  | 1010.45  |
   
-
+  
 *This pivot table is used to show the recipe's complexity using `n_steps` and `n_ingredients` and how it relates to the recipe's cooking time using `minutes`. In general, the data reveals an upward moving trend which relates with the question that we are exploring on how recipes with a greater amount of steps and ingredients require more time to make. Additionally, this pivot table also highlights some of the outliers we had which were recipes that had little ingredients but took a very long time to prepare (such as fermentation processes).*
 
 **Assessment of Missingness**
+A column that we suspected may be MNAR (missing not at random) was the `description` column because it is dependent on whether or not the authors of the recipes wanted to write it. It is possible that they felt like the recipe didn't need one because of the simplicity or they just did not feel like doing it. One piece of additional information that could help explain the missingness (make it MAR) is the activity of each recipe author. This way, if we see that an author is typically not very active, it could explain the missing description.   
+We performed a permutation test to see if the missingness in `description` was because of `n_ingredients`. One rationale behind this was if the recipe itself had a lot of ingredients and therefore a lot to type out, the recipe author may be less willing to write the description. 
+For the permutation test, our **null hypothesis** was: The distribution of `n_ingredients` is the same for recipes with missing descriptions and recipes with non-missing descriptions and our **alternative hypothesis** was: The distribution of `n_ingredients` is different for recipes with missing descriptions versus those with non-missing descriptions.  
+As a result of our 1,000 simulations, we got a p-value of 0.001 which led us to reject the null hypothesis. This strongly indicates that the missingness of `description` is dependent on `n_ingredients` which means that the missingness is MAR rather than MCAR. 
