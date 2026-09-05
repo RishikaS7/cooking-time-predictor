@@ -1,6 +1,4 @@
-# Cooking Time Predictor
-
-YumYumYumInMyTumTumTum  
+**YumYumYumInMyTumTumTum**  
 By: Rishika Sahu and Natalie Wu  
 
 ## Table of Contents
@@ -69,3 +67,5 @@ As a result of our 1,000 simulations, we got a p-value of 0.001 which led us to 
   height="450"
   frameborder="0"
 ></iframe>
+
+## 4. Hypothesis Testing
