@@ -17,7 +17,7 @@ After merging the datasets together, we needed to fill any null values in `ratin
 <iframe
   src="assets/distribution_of_steps.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 *This plot represents univariate analysis using the distribution of the number of steps throughout each recipe, with `n_steps` on the horizontal axis and the vertical axis representing the density. The graph is very strongly right skewed which is a representation of the more complex and elaborate dishes in comparison to the simple recipes that are more commonly made.*
@@ -25,7 +25,7 @@ After merging the datasets together, we needed to fill any null values in `ratin
 <iframe
   src="assets/ing_steps.html"
   width="800"
-  height="400"
+  height="450"
   frameborder="0"
 ></iframe>
 *This plot represents the bivariate analysis between `n_ingredients` and `n_steps` with `n_steps` on the horizontal axis and `n_ingredients` on the vertical axis. In this scatterplot, there is some clustering in the bottom left where the number of steps range from 0 to 30 and the number of ingredients from 0 to 15. Because there is a slight positive association, there is a trend showing that recipes with more ingredients tend to require more steps.
