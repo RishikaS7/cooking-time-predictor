@@ -1,4 +1,4 @@
-**YumYumYumInMyTumTumTum**  
+## YumYumYumInMyTumTumTum  
 By: Rishika Sahu and Natalie Wu  
 
 ## Table of Contents
@@ -12,7 +12,7 @@ By: Rishika Sahu and Natalie Wu
 * [8. Fairness Analysis](#8-fairness-analysis)
   
 ## 1. Introduction
-For our DSC 80 Final Project, we chose to work with the provided dataset from Food.com. With a busy lifestyle, it is critical that the recipes we choose to make are not only tasty but simple and quick to make as well. With that being said, we chose to focus our project on predicting the time it takes to make a recipe using features such as the number of steps, number of ingredients, and nutrition facts. In the merged dataset, there is a total of 234,429 rows and 17 columns. Out of the 17 columns, the ones most useful to us are `minutes`, `n_steps`, and `ingredients` since they overall will be able to give us a good idea of the timing, steps, and the ingredients required.  
+We chose to work with the provided dataset from Food.com. With a busy lifestyle, it is critical that the recipes we choose to make are not only tasty but simple and quick to make as well. With that being said, we chose to focus our project on predicting the time it takes to make a recipe using features such as the number of steps, number of ingredients, and nutrition facts. In the merged dataset, there is a total of 234,429 rows and 17 columns. Out of the 17 columns, the ones most useful to us are `minutes`, `n_steps`, and `ingredients` since they overall will be able to give us a good idea of the timing, steps, and the ingredients required.  
 
 
 ## 2. Data Cleaning and Exploratory Data Analysis  
@@ -57,9 +57,14 @@ After merging the datasets together, we needed to fill any null values in `ratin
 
 ## 3. Assessment of Missingness   
 A column that we suspected may be MNAR (missing not at random) was the `description` column because it is dependent on whether or not the authors of the recipes wanted to write it. It is possible that they felt like the recipe didn't need one because of the simplicity or they just did not feel like doing it. One piece of additional information that could help explain the missingness (make it MAR) is the activity of each recipe author. This way, if we see that an author is typically not very active, it could explain the missing description.   
+
 We performed a permutation test to see if the missingness in `description` was because of `n_ingredients`. One rationale behind this was if the recipe itself had a lot of ingredients and therefore a lot to type out, the recipe author may be less willing to write the description. 
-For the permutation test, our **null hypothesis** was: The distribution of `n_ingredients` is the same for recipes with missing descriptions and recipes with non-missing descriptions and our **alternative hypothesis** was: The distribution of `n_ingredients` is different for recipes with missing descriptions versus those with non-missing descriptions.  
-As a result of our 1,000 simulations, we got a p-value of 0.001 which led us to reject the null hypothesis. This strongly indicates that the missingness of `description` is dependent on `n_ingredients` which means that the missingness is MAR rather than MCAR. 
+
+For the permutation test:  
+Null hypothesis (H₀): The distribution of `n_ingredients` is the same for recipes with missing descriptions and recipes with non-missing descriptions  
+Alternative hypothesis (H₁): The distribution of `n_ingredients` is different for recipes with missing descriptions versus those with non-missing descriptions.  
+
+As a result of our 1,000 simulations, we got a p-value of 0.001 which is below the significance level of 0.05 which led us to reject the null hypothesis. This strongly indicates that the missingness of `description` is dependent on `n_ingredients` which means that the missingness is MAR rather than MCAR. 
 
 <iframe
   src="assets/missing.html"
@@ -69,3 +74,18 @@ As a result of our 1,000 simulations, we got a p-value of 0.001 which led us to 
 ></iframe>
 
 ## 4. Hypothesis Testing
+
+For our hypothesis test, our:  
+Null hypothesis (H₀): Recipes with more than equal to the median steps have the same average minutes as recipes with less than the median steps.
+Alternative hypothesis (H₁): Recipes with more than the median steps have a higher average minutes than recipes with less than the median steps.
+Test statistic: Difference in group means of minutes (more than median steps minus less than median steps)
+
+As a result of our 1,000 simulations, we got a p-value of 0.000 which is below the significance level of 0.05 which led us to reject the null hypothesis.  
+
+Our choice of using the difference means in this is the best choice for answering our question because we are evaluating continuous quantitative variables.
+
+## 5. Framing a Prediction Problem  
+Our prediction problem for this portion remains the same as our previous being : predict the number of minutes of a recipe using number of steps `n_steps` and number of ingredients `n_ingredients`. Since we are predicting a continuous quantitative variable, we chose to use regression. Our response variable is `minutes` because it looks at the timing for completing a recipe which would help users allocate the proper amount of time for preparing a meal. Our evaluation metric is root mean squared error (RMSE) which we chose to use over other evaluation metrics such as variance because we are more interested in looking at the real data rather than the statistical fit. At the time of prediction, both features that we are choosing to use, `n_steps` and `n_ingredients` will be available since they are part of the recipe. 
+
+## 6. Baseline Model  
+
