@@ -16,7 +16,7 @@ After merging the datasets together, we needed to fill any null values in 'ratin
 <iframe
   src="assets/distribution_of_steps.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 This plot represents the distribution of the number of steps throughout each recipe with 'n_steps' on the horizontal axis and the vertical axis representing the density. The graph is very strongly right skewed which is a representation of the more complex and elaborate dishes in comparison to the simple recipes that are more commonly made.
