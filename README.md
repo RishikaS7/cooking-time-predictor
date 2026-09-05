@@ -20,6 +20,7 @@ After merging the datasets together, we needed to fill any null values in `ratin
 | 306168 | 412 broccoli casserole               |        40 |         6 |               9 |            5 |
 | 306168 | 412 broccoli casserole               |        40 |         6 |               9 |            5 |
 | 306168 | 412 broccoli casserole               |        40 |         6 |               9 |            5 |
+  
 
 <iframe
   src="assets/distribution_of_steps.html"
@@ -44,6 +45,7 @@ After merging the datasets together, we needed to fill any null values in `ratin
 | 21-30          | 512.816 | 146.249  | 122.258  | 314.958  |  168.814 |
 | 31-40          | 339.691 | 251.076  | 130.076  | 190.704  |  277.705 |
 | 41+            | 238.114 | 350.005  | 168.005  | 325.993  | 1010.45  |
+  
 
 *This pivot table is used to show the recipe's complexity using `n_steps` and `n_ingredients` and how it relates to the recipe's cooking time using `minutes`. In general, the data reveals an upward moving trend which relates with the question that we are exploring on how recipes with a greater amount of steps and ingredients require more time to make. Additionally, this pivot table also highlights some of the outliers we had which were recipes that had little ingredients but took a very long time to prepare (such as fermentation processes).*
 
