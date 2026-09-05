@@ -62,3 +62,10 @@ A column that we suspected may be MNAR (missing not at random) was the `descript
 We performed a permutation test to see if the missingness in `description` was because of `n_ingredients`. One rationale behind this was if the recipe itself had a lot of ingredients and therefore a lot to type out, the recipe author may be less willing to write the description. 
 For the permutation test, our **null hypothesis** was: The distribution of `n_ingredients` is the same for recipes with missing descriptions and recipes with non-missing descriptions and our **alternative hypothesis** was: The distribution of `n_ingredients` is different for recipes with missing descriptions versus those with non-missing descriptions.  
 As a result of our 1,000 simulations, we got a p-value of 0.001 which led us to reject the null hypothesis. This strongly indicates that the missingness of `description` is dependent on `n_ingredients` which means that the missingness is MAR rather than MCAR. 
+
+<iframe
+  src="assets/missing.html"
+  width="800"
+  height="450"
+  frameborder="0"
+></iframe>
