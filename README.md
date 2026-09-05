@@ -13,4 +13,12 @@ For our DSC 80 Final Project, we chose to work with the provided dataset from Fo
 For the data cleaning process, we started out by merging the interactions.csv with the RAW_recipes.csv on the 'recipe_id'/'id' columns in the corresponding datasets since those columns represented the identification of each recipe. An additional thing to note on the merging process is that we used a left merge to ensure that all of the listed recipes are being used in our project even if they have no ratings, reviews, or interactions in general.  
 After merging the datasets together, we needed to fill any null values in 'rating' with a 0 (per the given project instructions). We then calculated the average rating for each recipe by grouping the DataFrame by 'id' and calculating the mean for the 'rating' column before merging it into our main dataset as a column called 'avg_rating'.  
 
+<iframe
+  src="assets/distribution_of_steps.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+This plot represents the distribution of the number of steps throughout each recipe with 'n_steps' on the horizontal axis and the vertical axis representing the density. The graph is very strongly right skewed which is a representation of the more complex and elaborate dishes in comparison to the simple recipes that are more commonly made.
+
 **Assessment of Missingness**
