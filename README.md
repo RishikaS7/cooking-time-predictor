@@ -28,6 +28,6 @@ After merging the datasets together, we needed to fill any null values in `ratin
   height="450"
   frameborder="0"
 ></iframe>
-*This plot represents the bivariate analysis between `n_ingredients` and `n_steps` with `n_steps` on the horizontal axis and `n_ingredients` on the vertical axis. In this scatterplot, there is some clustering in the bottom left where the number of steps range from 0 to 30 and the number of ingredients from 0 to 15. Because there is a slight positive association, there is a trend showing that recipes with more ingredients tend to require more steps.
+*This plot represents the bivariate analysis between `n_ingredients` and `n_steps` with `n_steps` on the horizontal axis and `n_ingredients` on the vertical axis. In this scatterplot, there is some clustering in the bottom left where the number of steps range from 0 to 30 and the number of ingredients from 0 to 15. Because there is a slight positive association, there is a trend showing that recipes with more ingredients tend to require more steps.*
 
 **Assessment of Missingness**
