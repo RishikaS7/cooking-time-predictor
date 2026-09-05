@@ -1,8 +1,18 @@
 # Cooking Time Predictor
 
 YumYumYumInMyTumTumTum  
-By: Rishika Sahu and Natalie Wu
+By: Rishika Sahu and Natalie Wu  
 
+## Table of Contents
+* [1. Introduction](#1-introduction)
+* [2. Data Cleaning and Exploratory Data Analysis](#2-data-cleaning-and-exploratory-data-analysis)
+* [3. Assessment of Missingness](#3-assessment-of-missingness)
+* [4. Hypothesis Testing](#4-hypothesis-testing)
+* [5. Framing a Prediction Problem](#5-framing-a-prediction-problem)
+* [6. Baseline Model](#6-baseline-model)
+* [7. Final Model](#7-final-model)
+* [8. Fairness Analysis](#8-fairness-analysis)
+  
 **Introduction**  
 For our DSC 80 Final Project, we chose to work with the provided dataset from Food.com. With a busy lifestyle, it is critical that the recipes we choose to make are not only tasty but simple and quick to make as well. With that being said, we chose to focus our project on predicting the time it takes to make a recipe using features such as the number of steps, number of ingredients, and nutrition facts. In the merged dataset, there is a total of 234,429 rows and 17 columns. Out of the 17 columns, the ones most useful to us are `minutes`, `n_steps`, and `ingredients` since they overall will be able to give us a good idea of the timing, steps, and the ingredients required.  
 
